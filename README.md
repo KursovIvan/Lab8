@@ -7,6 +7,8 @@
 
 Запустить программу можно файлом
 [Lab8.exe](https://github.com/KursovIvan/Lab8/blob/main/Lab8/Debug/Lab8.exe)
+Выходные данные логгера
+[Log.txt](https://github.com/KursovIvan/Lab8/blob/main/Lab8/Lab8/Log.txt)
 # Скриншоты консоли
 ![Скриншот](https://github.com/KursovIvan/Lab8/blob/main/Screenshots/Test_0.png)
 ![Скриншот](https://github.com/KursovIvan/Lab8/blob/main/Screenshots/Test_1.png)

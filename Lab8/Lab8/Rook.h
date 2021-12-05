@@ -1,19 +1,22 @@
-#pragma once
+ï»¿#pragma once
 #include "Figure.h"
 
-//êëàññ ëàäüè
+//ÐºÐ»Ð°ÑÑ Ð»Ð°Ð´ÑŒÐ¸
 class Rook : public Figure
 {
 public:
 	bool IsThreaten(Figure A) override
 	{
-		//ïðîâåðÿåì íàõîäèòñÿ ëè ôèãóðà íà ïðÿìîé îò ëàäüè 
-		return ((this->xCurrent == A.xCurrent) || (this->yCurrent == A.yCurrent));
+		//Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑÐµÐ¼ Ð½Ð°Ñ…Ð¾Ð´Ð¸Ñ‚ÑÑ Ð»Ð¸ Ñ„Ð¸Ð³ÑƒÑ€Ð° Ð½Ð° Ð¿Ñ€ÑÐ¼Ð¾Ð¹ Ð¾Ñ‚ Ð»Ð°Ð´ÑŒÐ¸ 
+		bool result = ((this->xCurrent == A.xCurrent) || (this->yCurrent == A.yCurrent));
+		PLOG_INFO << "Is Threaten: " << result;
+		return result;
 	}
 	bool Move(Figure A) override
 	{
-		//óðàâíèâàåì êîîðäèíàòó X ëàäüè, ÷òîáû ôèãóðû ñòîÿëè íà îäíîé ïðÿìîé
+		//ÑƒÑ€Ð°Ð²Ð½Ð¸Ð²Ð°ÐµÐ¼ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ñƒ X Ð»Ð°Ð´ÑŒÐ¸, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹ ÑÑ‚Ð¾ÑÐ»Ð¸ Ð½Ð° Ð¾Ð´Ð½Ð¾Ð¹ Ð¿Ñ€ÑÐ¼Ð¾Ð¹
 		this->xCurrent = A.xCurrent;
+		PLOG_INFO << "New Coordinates: x: " << xCurrent << " | y: " << yCurrent;
 		return true;
 	}
 };

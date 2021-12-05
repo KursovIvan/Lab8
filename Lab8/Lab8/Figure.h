@@ -1,22 +1,24 @@
-#pragma once
+ï»¿#pragma once
 
-const int boardSize = 8; //ðàçìåð äîñêè 
+const int boardSize = 8; //Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð´Ð¾ÑÐºÐ¸ 
 
-//ôóíêöèÿ âûâîäèò ïðåäóïðåæäåíèå î íåâåðíîì ââîäå
+//Ñ„ÑƒÐ½ÐºÑ†Ð¸Ñ Ð²Ñ‹Ð²Ð¾Ð´Ð¸Ñ‚ Ð¿Ñ€ÐµÐ´ÑƒÐ¿Ñ€ÐµÐ¶Ð´ÐµÐ½Ð¸Ðµ Ð¾ Ð½ÐµÐ²ÐµÑ€Ð½Ð¾Ð¼ Ð²Ð²Ð¾Ð´Ðµ
 void InvalidInput()
 {
 	std::cin.clear();
 	std::cin.ignore(std::cin.rdbuf()->in_avail());
-	std::cout << "Íåêîððåêòíûé ââîä " << std::endl;
+	std::cout << "ÐÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ð¹ Ð²Ð²Ð¾Ð´ " << std::endl;
+	PLOG_ERROR << "Error";
 }
-//êëàññ íåîïðåäåëåííîé øàõìàòíîé ôèãóðû
+//ÐºÐ»Ð°ÑÑ Ð½ÐµÐ¾Ð¿Ñ€ÐµÐ´ÐµÐ»ÐµÐ½Ð½Ð¾Ð¹ ÑˆÐ°Ñ…Ð¼Ð°Ñ‚Ð½Ð¾Ð¹ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 class Figure
 {	
 public:
-	//ââîä êîîðäèíàò äëÿ ôèãóðû
+	//Ð²Ð²Ð¾Ð´ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚ Ð´Ð»Ñ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 	void SetPosition(char num, int figure1x, int figure1y)
 	{
-		std::cout << "Ôèãóðà ¹" << num << ": " << std::endl;
+		std::cout << "Ð¤Ð¸Ð³ÑƒÑ€Ð° â„–" << num << ": " << std::endl;
+		PLOG_INFO << "Figure â„– " << num;
 		while (true)
 		{
 			for (int i = 0; i < 2; i++)
@@ -24,8 +26,9 @@ public:
 				int temp = 0;
 				while (true)
 				{
-					std::cout << "Ââåäèòå êîîðäèíàòó " << (char)('X' + i) << " (íàòóðàëüíîå ÷èñëî, íå ïðåâûøàþùåå " << boardSize << ")" << std::endl;
+					std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ñƒ " << (char)('X' + i) << " (Ð½Ð°Ñ‚ÑƒÑ€Ð°Ð»ÑŒÐ½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾, Ð½Ðµ Ð¿Ñ€ÐµÐ²Ñ‹ÑˆÐ°ÑŽÑ‰ÐµÐµ " << boardSize << ")" << std::endl;
 					std::cin >> temp;
+					PLOG_INFO << "Temporary Coordinate: " << temp;
 					if (std::cin.fail() || std::cin.peek() != '\n' || temp > boardSize || temp < 1)
 					{
 						InvalidInput();
@@ -38,11 +41,13 @@ public:
 				case 0:
 				{
 					xInitial = temp;
+					PLOG_INFO << "xInitial: " << xInitial;
 					break;
 				}
 				case 1:
 				{
 					yInitial = temp;
+					PLOG_INFO << "yInitial: " << yInitial;
 					break;
 				}
 				}
@@ -54,31 +59,33 @@ public:
 			else
 			{
 				InvalidInput();
-				std::cout << "Ýòà êëåòêà óæå çàíÿòà " << std::endl;
+				std::cout << "Ð­Ñ‚Ð° ÐºÐ»ÐµÑ‚ÐºÐ° ÑƒÐ¶Ðµ Ð·Ð°Ð½ÑÑ‚Ð° " << std::endl;
 			}
 		}
-		xCurrent = xInitial;
-		yCurrent = yInitial;
+		xCurrent = xInitial;		
+		yCurrent = yInitial;		
 	}
-	//ôóíêöèÿ ïðîâåðÿåò öâåòà äâóõ ôèãóð íà ñõîäèìîñòü
+	//Ñ„ÑƒÐ½ÐºÑ†Ð¸Ñ Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑÐµÑ‚ Ñ†Ð²ÐµÑ‚Ð° Ð´Ð²ÑƒÑ… Ñ„Ð¸Ð³ÑƒÑ€ Ð½Ð° ÑÑ…Ð¾Ð´Ð¸Ð¼Ð¾ÑÑ‚ÑŒ
 	virtual bool ColorMatch(Figure A) 
 	{
-		return ((this->xCurrent + this->yCurrent) % 2 == (A.xCurrent + A.yCurrent) % 2);
+		bool result = ((this->xCurrent + this->yCurrent) % 2 == (A.xCurrent + A.yCurrent) % 2);
+		PLOG_INFO << "Color Math: " << result;
+		return result;
 	};
-	//âîçâðàùàåò true åñëè äàííàÿ ôèãóðà óãðîæàåò äðóãîé ôèãóðå
+	//Ð²Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ true ÐµÑÐ»Ð¸ Ð´Ð°Ð½Ð½Ð°Ñ Ñ„Ð¸Ð³ÑƒÑ€Ð° ÑƒÐ³Ñ€Ð¾Ð¶Ð°ÐµÑ‚ Ð´Ñ€ÑƒÐ³Ð¾Ð¹ Ñ„Ð¸Ð³ÑƒÑ€Ðµ
 	virtual bool IsThreaten(Figure A) 
 	{
 		return false;
 	};
-	//âîçâðàùàåò true åñëè äî äðóãîé ôèãóðû ìîæíî äîéòè ñ ïîìîùüþ äâóõ õîäîâ
+	//Ð²Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ true ÐµÑÐ»Ð¸ Ð´Ð¾ Ð´Ñ€ÑƒÐ³Ð¾Ð¹ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹ Ð¼Ð¾Ð¶Ð½Ð¾ Ð´Ð¾Ð¹Ñ‚Ð¸ Ñ Ð¿Ð¾Ð¼Ð¾Ñ‰ÑŒÑŽ Ð´Ð²ÑƒÑ… Ñ…Ð¾Ð´Ð¾Ð²
 	virtual bool Move(Figure A) 
 	{
 		return false;
 	};
-	//íà÷àëüíûå êîîðäèíàòû
+	//Ð½Ð°Ñ‡Ð°Ð»ÑŒÐ½Ñ‹Ðµ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ñ‹
 	int xInitial;
 	int yInitial;
-	//êîîðäèíàòû íîâîé ïîçèöèè
+	//ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ñ‹ Ð½Ð¾Ð²Ð¾Ð¹ Ð¿Ð¾Ð·Ð¸Ñ†Ð¸Ð¸
 	int xCurrent;
 	int yCurrent;
 };

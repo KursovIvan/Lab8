@@ -1,14 +1,15 @@
-#pragma once
+п»ї#pragma once
 #include <iostream>
 #include "Figure.h"
 
-//класс шахматной доски
+//РєР»Р°СЃСЃ С€Р°С…РјР°С‚РЅРѕР№ РґРѕСЃРєРё
 class Board
 {
 public:
-	//выводит шахматную доску на экран
+	//РІС‹РІРѕРґРёС‚ С€Р°С…РјР°С‚РЅСѓСЋ РґРѕСЃРєСѓ РЅР° СЌРєСЂР°РЅ
 	void SetBoard(Figure* A, Figure* B)
 	{
+		PLOG_INFO << "Board.SetBoard() Started";
 		std::cout << std::endl;
 		for (int i = 0; i < boardSize + 1; i++)
 		{
@@ -44,15 +45,18 @@ public:
 				std::cout << std::endl << boardSize - i << " ";
 			}
 		}
+		PLOG_INFO << "Board.SetBoard() Completed";
 	}
-	//выводит информацию по значкам
+	//РІС‹РІРѕРґРёС‚ РёРЅС„РѕСЂРјР°С†РёСЋ РїРѕ Р·РЅР°С‡РєР°Рј
 	void ShowInfo()
 	{
-		std::cout << std::endl << std::endl << black << " - черная клетка" << std::endl
-			<< white << " - белая клетка" << std::endl
-			<< firstFig << " - первая фигура" << std::endl
-			<< secondFig << " - вторая фигура" << std::endl
-			<< waypoint << " - промежуточная клетка";
+		PLOG_INFO << "Board.ShowInfo() Started";
+		std::cout << std::endl << std::endl << black << " - С‡РµСЂРЅР°СЏ РєР»РµС‚РєР°" << std::endl
+			<< white << " - Р±РµР»Р°СЏ РєР»РµС‚РєР°" << std::endl
+			<< firstFig << " - РїРµСЂРІР°СЏ С„РёРіСѓСЂР°" << std::endl
+			<< secondFig << " - РІС‚РѕСЂР°СЏ С„РёРіСѓСЂР°" << std::endl
+			<< waypoint << " - РїСЂРѕРјРµР¶СѓС‚РѕС‡РЅР°СЏ РєР»РµС‚РєР°";
+		PLOG_INFO << "Board.ShowInfo() Completed";
 	}
 private:
 	char black = 'B';

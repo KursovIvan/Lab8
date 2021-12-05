@@ -1,5 +1,7 @@
 ﻿#include <iostream>
 #include <conio.h>
+#include "plog-master/include/plog/Log.h"
+#include "plog-master/include/plog/Initializers/RollingFileInitializer.h"
 #include "Figure.h"
 #include "Rook.h"
 #include "Bishop.h"
@@ -7,10 +9,10 @@
 #include "Knight.h"
 #include "Board.h"
 
-
 int main()
 {
 	setlocale(LC_ALL, "Rus");
+	plog::init(plog::verbose, "Log.txt", 1000000, 5);
 	int figureType = 0;
 	Figure* firstFigure = 0;
 	Figure secondFigure;
@@ -22,6 +24,7 @@ int main()
 			      << "\n\t3 - Ферзь "
 			      << "\n\t4 - Конь " << std::endl;
 		std::cin >> figureType;
+		PLOG_INFO << "Figure Type : " << figureType;
 		if (std::cin.fail() || std::cin.peek() != '\n' || figureType > 4 || figureType < 1)
 		{
 			InvalidInput();

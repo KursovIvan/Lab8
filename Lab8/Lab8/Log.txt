@@ -1,0 +1,90 @@
+﻿2021-12-05 16:29:14.457 INFO  [13628] [main@27] Figure Type : 4
+2021-12-05 16:29:14.462 INFO  [13628] [Figure::SetPosition@21] Figure № 1
+2021-12-05 16:29:17.136 INFO  [13628] [Figure::SetPosition@31] Temporary Coordinate: 0
+2021-12-05 16:29:17.139 ERROR [13628] [InvalidInput@11] Error
+2021-12-05 16:29:31.624 INFO  [13628] [Figure::SetPosition@31] Temporary Coordinate: 0
+2021-12-05 16:29:31.626 ERROR [13628] [InvalidInput@11] Error
+2021-12-05 16:29:36.952 INFO  [13628] [Figure::SetPosition@31] Temporary Coordinate: 4
+2021-12-05 16:29:36.953 INFO  [13628] [Figure::SetPosition@44] xInitial: 4
+2021-12-05 16:29:37.872 INFO  [13628] [Figure::SetPosition@31] Temporary Coordinate: 2
+2021-12-05 16:29:37.873 INFO  [13628] [Figure::SetPosition@50] yInitial: 2
+2021-12-05 16:29:37.874 INFO  [13628] [Figure::SetPosition@21] Figure № 2
+2021-12-05 16:29:39.680 INFO  [13628] [Figure::SetPosition@31] Temporary Coordinate: 6
+2021-12-05 16:29:39.681 INFO  [13628] [Figure::SetPosition@44] xInitial: 6
+2021-12-05 16:29:40.440 INFO  [13628] [Figure::SetPosition@31] Temporary Coordinate: 3
+2021-12-05 16:29:40.441 INFO  [13628] [Figure::SetPosition@50] yInitial: 3
+2021-12-05 16:29:40.441 INFO  [13628] [Figure::ColorMatch@72] Color Math: 0
+2021-12-05 16:29:40.458 INFO  [13628] [Knight::IsThreaten@14] Is Threaten: 1
+2021-12-05 16:29:40.462 INFO  [13628] [Board::SetBoard@12] Board.SetBoard() Started
+2021-12-05 16:29:40.503 INFO  [13628] [Board::SetBoard@48] Board.SetBoard() Completed
+2021-12-05 16:29:40.504 INFO  [13628] [Board::ShowInfo@53] Board.ShowInfo() Started
+2021-12-05 16:29:40.522 INFO  [13628] [Board::ShowInfo@59] Board.ShowInfo() Completed
+2021-12-05 16:44:57.465 INFO  [16220] [main@27] Figure Type : 1
+2021-12-05 16:44:57.480 INFO  [16220] [Figure::SetPosition@21] Figure № 1
+2021-12-05 16:45:00.768 INFO  [16220] [Figure::SetPosition@31] Temporary Coordinate: 1
+2021-12-05 16:45:00.768 INFO  [16220] [Figure::SetPosition@44] xInitial: 1
+2021-12-05 16:45:01.351 INFO  [16220] [Figure::SetPosition@31] Temporary Coordinate: 1
+2021-12-05 16:45:01.353 INFO  [16220] [Figure::SetPosition@50] yInitial: 1
+2021-12-05 16:45:01.357 INFO  [16220] [Figure::SetPosition@21] Figure № 2
+2021-12-05 16:45:02.407 INFO  [16220] [Figure::SetPosition@31] Temporary Coordinate: 5
+2021-12-05 16:45:02.408 INFO  [16220] [Figure::SetPosition@44] xInitial: 5
+2021-12-05 16:45:03.744 INFO  [16220] [Figure::SetPosition@31] Temporary Coordinate: 3
+2021-12-05 16:45:03.746 INFO  [16220] [Figure::SetPosition@50] yInitial: 3
+2021-12-05 16:45:03.747 INFO  [16220] [Figure::ColorMatch@72] Color Math: 1
+2021-12-05 16:45:03.751 INFO  [16220] [Rook::IsThreaten@12] Is Threaten: 0
+2021-12-05 16:45:03.754 INFO  [16220] [Rook::Move@19] New Coordinates: x: 5 | y: 1
+2021-12-05 16:45:03.764 INFO  [16220] [Board::SetBoard@12] Board.SetBoard() Started
+2021-12-05 16:45:03.814 INFO  [16220] [Board::SetBoard@48] Board.SetBoard() Completed
+2021-12-05 16:45:03.814 INFO  [16220] [Board::ShowInfo@53] Board.ShowInfo() Started
+2021-12-05 16:45:03.840 INFO  [16220] [Board::ShowInfo@59] Board.ShowInfo() Completed
+2021-12-05 16:45:26.246 INFO  [7964] [main@27] Figure Type : 2
+2021-12-05 16:45:26.249 INFO  [7964] [Figure::SetPosition@21] Figure № 1
+2021-12-05 16:45:31.951 INFO  [7964] [Figure::SetPosition@31] Temporary Coordinate: 1
+2021-12-05 16:45:31.952 INFO  [7964] [Figure::SetPosition@44] xInitial: 1
+2021-12-05 16:45:33.031 INFO  [7964] [Figure::SetPosition@31] Temporary Coordinate: 1
+2021-12-05 16:45:33.032 INFO  [7964] [Figure::SetPosition@50] yInitial: 1
+2021-12-05 16:45:33.033 INFO  [7964] [Figure::SetPosition@21] Figure № 2
+2021-12-05 16:45:35.968 INFO  [7964] [Figure::SetPosition@31] Temporary Coordinate: 5
+2021-12-05 16:45:35.968 INFO  [7964] [Figure::SetPosition@44] xInitial: 5
+2021-12-05 16:45:36.447 INFO  [7964] [Figure::SetPosition@31] Temporary Coordinate: 5
+2021-12-05 16:45:36.448 INFO  [7964] [Figure::SetPosition@50] yInitial: 5
+2021-12-05 16:45:36.448 INFO  [7964] [Figure::ColorMatch@72] Color Math: 1
+2021-12-05 16:45:36.451 INFO  [7964] [Figure::ColorMatch@72] Color Math: 1
+2021-12-05 16:45:36.452 INFO  [7964] [Bishop::IsThreaten@13] Is Threaten: 1
+2021-12-05 16:45:36.456 INFO  [7964] [Board::SetBoard@12] Board.SetBoard() Started
+2021-12-05 16:45:36.494 INFO  [7964] [Board::SetBoard@48] Board.SetBoard() Completed
+2021-12-05 16:45:36.495 INFO  [7964] [Board::ShowInfo@53] Board.ShowInfo() Started
+2021-12-05 16:45:36.510 INFO  [7964] [Board::ShowInfo@59] Board.ShowInfo() Completed
+2021-12-05 16:45:49.941 INFO  [7644] [main@27] Figure Type : 0
+2021-12-05 16:45:49.951 ERROR [7644] [InvalidInput@11] Error
+2021-12-05 16:45:57.623 INFO  [7644] [main@27] Figure Type : 4
+2021-12-05 16:45:57.625 INFO  [7644] [Figure::SetPosition@21] Figure № 1
+2021-12-05 16:46:01.639 INFO  [7644] [Figure::SetPosition@31] Temporary Coordinate: 1
+2021-12-05 16:46:01.640 INFO  [7644] [Figure::SetPosition@44] xInitial: 1
+2021-12-05 16:46:02.344 INFO  [7644] [Figure::SetPosition@31] Temporary Coordinate: 2
+2021-12-05 16:46:02.344 INFO  [7644] [Figure::SetPosition@50] yInitial: 2
+2021-12-05 16:46:02.346 INFO  [7644] [Figure::SetPosition@21] Figure № 2
+2021-12-05 16:46:03.879 INFO  [7644] [Figure::SetPosition@31] Temporary Coordinate: 8
+2021-12-05 16:46:03.880 INFO  [7644] [Figure::SetPosition@44] xInitial: 8
+2021-12-05 16:46:04.311 INFO  [7644] [Figure::SetPosition@31] Temporary Coordinate: 7
+2021-12-05 16:46:04.312 INFO  [7644] [Figure::SetPosition@50] yInitial: 7
+2021-12-05 16:46:04.312 INFO  [7644] [Figure::ColorMatch@72] Color Math: 1
+2021-12-05 16:46:04.315 INFO  [7644] [Knight::IsThreaten@14] Is Threaten: 0
+2021-12-05 16:46:04.317 INFO  [7644] [Knight::Move@19] Knight.Move() Started
+2021-12-05 16:46:04.318 INFO  [7644] [Knight::Move@25] New Temporary Coordinates: x: 1 | y: 2
+2021-12-05 16:46:04.318 INFO  [7644] [Knight::IsThreaten@14] Is Threaten: 0
+2021-12-05 16:46:04.318 INFO  [7644] [Knight::Move@25] New Temporary Coordinates: x: 3 | y: 3
+2021-12-05 16:46:04.318 INFO  [7644] [Knight::IsThreaten@14] Is Threaten: 0
+2021-12-05 16:46:04.318 INFO  [7644] [Knight::Move@25] New Temporary Coordinates: x: 3 | y: 1
+2021-12-05 16:46:04.319 INFO  [7644] [Knight::IsThreaten@14] Is Threaten: 0
+2021-12-05 16:46:04.319 INFO  [7644] [Knight::Move@25] New Temporary Coordinates: x: 2 | y: 4
+2021-12-05 16:46:04.319 INFO  [7644] [Knight::IsThreaten@14] Is Threaten: 0
+2021-12-05 16:46:04.319 INFO  [7644] [Knight::Move@25] New Temporary Coordinates: x: 1 | y: 2
+2021-12-05 16:46:04.319 INFO  [7644] [Knight::IsThreaten@14] Is Threaten: 0
+2021-12-05 16:46:04.320 INFO  [7644] [Knight::Move@25] New Temporary Coordinates: x: 1 | y: 2
+2021-12-05 16:46:04.320 INFO  [7644] [Knight::IsThreaten@14] Is Threaten: 0
+2021-12-05 16:46:04.320 INFO  [7644] [Knight::Move@82] Knight.Move() Completed With False
+2021-12-05 16:46:04.325 INFO  [7644] [Board::SetBoard@12] Board.SetBoard() Started
+2021-12-05 16:46:04.370 INFO  [7644] [Board::SetBoard@48] Board.SetBoard() Completed
+2021-12-05 16:46:04.370 INFO  [7644] [Board::ShowInfo@53] Board.ShowInfo() Started
+2021-12-05 16:46:04.388 INFO  [7644] [Board::ShowInfo@59] Board.ShowInfo() Completed

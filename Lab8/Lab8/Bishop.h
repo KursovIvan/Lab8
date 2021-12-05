@@ -1,29 +1,35 @@
-#pragma once
+п»ї#pragma once
 #include "Figure.h"
 #include <math.h>
 
-//клас слона
+//РєР»Р°СЃ СЃР»РѕРЅР°
 class Bishop : public Figure
 {
 public:
 	bool IsThreaten(Figure A) override
 	{
-		//проверяем находиться ли фигура по любой диагонали от слона
-		return ((abs(this->xCurrent - A.xCurrent) == abs(this->yCurrent - A.yCurrent)) && ColorMatch(A));
+		//РїСЂРѕРІРµСЂСЏРµРј РЅР°С…РѕРґРёС‚СЊСЃСЏ Р»Рё С„РёРіСѓСЂР° РїРѕ Р»СЋР±РѕР№ РґРёР°РіРѕРЅР°Р»Рё РѕС‚ СЃР»РѕРЅР°
+		bool result = ((abs(this->xCurrent - A.xCurrent) == abs(this->yCurrent - A.yCurrent)) && ColorMatch(A));
+		PLOG_INFO << "Is Threaten: " << result;
+		return result;
 	}
 	bool Move(Figure A) override
 	{
+		PLOG_INFO << "Bishop.Move() Started";
 		if (ColorMatch(A))
 		{
 			int i = 0;
 			while (i < 4)
 			{
-				//проверка следит чтобы слон не вышел за пределы шахматной доски
+				//РїСЂРѕРІРµСЂРєР° СЃР»РµРґРёС‚ С‡С‚РѕР±С‹ СЃР»РѕРЅ РЅРµ РІС‹С€РµР» Р·Р° РїСЂРµРґРµР»С‹ С€Р°С…РјР°С‚РЅРѕР№ РґРѕСЃРєРё
 				if ((this->xCurrent < boardSize + 1) && (this->yCurrent < boardSize + 1) && (this->xCurrent > 0) && (this->yCurrent > 0))
 				{	
-					//двигаем слона поочередно по одной из диагоналей
+					PLOG_INFO << "New Temporary Coordinates: x: " << this->xCurrent << " | y: " << this->yCurrent;
+					//РґРІРёРіР°РµРј СЃР»РѕРЅР° РїРѕРѕС‡РµСЂРµРґРЅРѕ РїРѕ РѕРґРЅРѕР№ РёР· РґРёР°РіРѕРЅР°Р»РµР№
 					if (this->IsThreaten(A))
 					{
+						PLOG_INFO << " New coordinates: x: " << this->xCurrent << " | y: " << this->yCurrent;
+						PLOG_INFO << "Bishop.Move() Completed With True";
 						return true;
 					}
 					if (i == 0)
@@ -55,6 +61,7 @@ public:
 				}
 			}
 		}
-		return false; //если цвет клеток двух фигур отличается, то слон не сможет дойти до другой фигуры
+		PLOG_INFO << "Bishop.Move() Completed With False";
+		return false; //РµСЃР»Рё С†РІРµС‚ РєР»РµС‚РѕРє РґРІСѓС… С„РёРіСѓСЂ РѕС‚Р»РёС‡Р°РµС‚СЃСЏ, С‚Рѕ СЃР»РѕРЅ РЅРµ СЃРјРѕР¶РµС‚ РґРѕР№С‚Рё РґРѕ РґСЂСѓРіРѕР№ С„РёРіСѓСЂС‹
 	}
 };

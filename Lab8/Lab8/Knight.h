@@ -1,27 +1,33 @@
-#pragma once
+п»ї#pragma once
 #include "Figure.h"
 #include <math.h>
 
-//класс коня
+//РєР»Р°СЃСЃ РєРѕРЅСЏ
 class Knight : public Figure
 {
 public:
 	bool IsThreaten(Figure A) override
 	{
-		//проверяем находится ли фигура А на одной из 8 доступных для атаки коня клетках
-		return (((abs(this->xCurrent - A.xCurrent) == 2) && (abs(this->yCurrent - A.yCurrent) == 1))
-				|| ((abs(this->xCurrent - A.xCurrent) == 1) && (abs(this->yCurrent - A.yCurrent) == 2)));
+		//РїСЂРѕРІРµСЂСЏРµРј РЅР°С…РѕРґРёС‚СЃСЏ Р»Рё С„РёРіСѓСЂР° Рђ РЅР° РѕРґРЅРѕР№ РёР· 8 РґРѕСЃС‚СѓРїРЅС‹С… РґР»СЏ Р°С‚Р°РєРё РєРѕРЅСЏ РєР»РµС‚РєР°С…
+		bool result = (((abs(this->xCurrent - A.xCurrent) == 2) && (abs(this->yCurrent - A.yCurrent) == 1))
+			|| ((abs(this->xCurrent - A.xCurrent) == 1) && (abs(this->yCurrent - A.yCurrent) == 2)));
+		PLOG_INFO << "Is Threaten: " << result;
+		return result;
 	}
 	bool Move(Figure A) override
 	{
+		PLOG_INFO << "Knight.Move() Started";
 		for (int i = 0; i < 8; i++)
 		{
-			//проверка следит чтобы конь не вышел за пределы шахматной доски
+			//РїСЂРѕРІРµСЂРєР° СЃР»РµРґРёС‚ С‡С‚РѕР±С‹ РєРѕРЅСЊ РЅРµ РІС‹С€РµР» Р·Р° РїСЂРµРґРµР»С‹ С€Р°С…РјР°С‚РЅРѕР№ РґРѕСЃРєРё
 			if ((this->xCurrent < boardSize + 1) && (this->yCurrent < boardSize + 1) && (this->xCurrent > 0) && (this->yCurrent > 0))
 			{
-				//конь может двигаться в восьми направлениях, двигаем его поочередно в каждом направлении
+				PLOG_INFO << "New Temporary Coordinates: x: " << this->xCurrent << " | y: " << this->yCurrent;
+				//РєРѕРЅСЊ РјРѕР¶РµС‚ РґРІРёРіР°С‚СЊСЃСЏ РІ РІРѕСЃСЊРјРё РЅР°РїСЂР°РІР»РµРЅРёСЏС…, РґРІРёРіР°РµРј РµРіРѕ РїРѕРѕС‡РµСЂРµРґРЅРѕ РІ РєР°Р¶РґРѕРј РЅР°РїСЂР°РІР»РµРЅРёРё
 				if (this->IsThreaten(A))
 				{
+					PLOG_INFO << " New coordinates: x: " << this->xCurrent << " | y: " << this->yCurrent;
+					PLOG_INFO << "Knight.Move() Completed With True";
 					return true;
 				}
 				this->xCurrent = this->xInitial;
@@ -73,6 +79,7 @@ public:
 				this->yCurrent = this->yInitial;
 			}
 		}
+		PLOG_INFO << "Knight.Move() Completed With False";
 		return false;
 	}
 };

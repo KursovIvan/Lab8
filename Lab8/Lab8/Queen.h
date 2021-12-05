@@ -1,21 +1,24 @@
-#pragma once
+ï»¿#pragma once
 #include "Figure.h"
 #include <math.h>
 
-//êëàññ ôåðçÿ
+//ÐºÐ»Ð°ÑÑ Ñ„ÐµÑ€Ð·Ñ
 class Queen : public Figure
 {
 public:
 	bool IsThreaten(Figure A) override
 	{
-		//ïðîâåðÿåì íàõîäèòüñÿ ëè ôèãóðà ïî ëþáîé äèàãîíàëè èëè íà ïðÿìîé ëèíèè îò ôåðçÿ
-		return ((this->xCurrent == A.xCurrent) || (this->yCurrent == A.yCurrent) 
-			    || ((abs(this->xCurrent - A.xCurrent) == abs(this->yCurrent - A.yCurrent)) && ColorMatch(A)));
+		//Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑÐµÐ¼ Ð½Ð°Ñ…Ð¾Ð´Ð¸Ñ‚ÑŒÑÑ Ð»Ð¸ Ñ„Ð¸Ð³ÑƒÑ€Ð° Ð¿Ð¾ Ð»ÑŽÐ±Ð¾Ð¹ Ð´Ð¸Ð°Ð³Ð¾Ð½Ð°Ð»Ð¸ Ð¸Ð»Ð¸ Ð½Ð° Ð¿Ñ€ÑÐ¼Ð¾Ð¹ Ð»Ð¸Ð½Ð¸Ð¸ Ð¾Ñ‚ Ñ„ÐµÑ€Ð·Ñ
+		bool result = ((this->xCurrent == A.xCurrent) || (this->yCurrent == A.yCurrent)
+			|| ((abs(this->xCurrent - A.xCurrent) == abs(this->yCurrent - A.yCurrent)) && ColorMatch(A)));
+		PLOG_INFO << "Is Threaten: " << result;
+		return result;
 	}
 	bool Move(Figure A) override
 	{
-		//óðàâíèâàåì êîîðäèíàòó X ôåðçÿ, ÷òîáû ôèãóðû ñòîÿëè íà îäíîé ïðÿìîé
+		//ÑƒÑ€Ð°Ð²Ð½Ð¸Ð²Ð°ÐµÐ¼ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ñƒ X Ñ„ÐµÑ€Ð·Ñ, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹ ÑÑ‚Ð¾ÑÐ»Ð¸ Ð½Ð° Ð¾Ð´Ð½Ð¾Ð¹ Ð¿Ñ€ÑÐ¼Ð¾Ð¹
 		this->xCurrent = A.xCurrent;
+		PLOG_INFO << "New Coordinates: x: " << xCurrent << " | y: " << yCurrent;
 		return true;
 	}
 };

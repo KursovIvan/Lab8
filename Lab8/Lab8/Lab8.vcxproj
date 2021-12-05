@@ -72,6 +72,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>plog-master/include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -147,7 +148,14 @@
     <ClInclude Include="Figure.h" />
     <ClInclude Include="Knight.h" />
     <ClInclude Include="Queen.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Rook.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Lab8.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Log.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

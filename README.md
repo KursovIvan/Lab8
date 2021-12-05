@@ -6,9 +6,9 @@
 Программа написана на языке C++, открыть проект можно в Visual Studio
 
 Запустить программу можно файлом
-[Lab8.exe](https://github.com/KursovIvan/Lab8/blob/main/Lab8/Debug/Lab8.exe)
+[Lab8.exe](https://github.com/KursovIvan/Lab8/blob/log/Lab8/Debug/Lab8.exe)
 Выходные данные логгера
-[Log.txt](https://github.com/KursovIvan/Lab8/blob/main/Lab8/Lab8/Log.txt)
+[Log.txt](https://github.com/KursovIvan/Lab8/blob/log/Lab8/Lab8/Log.txt)
 # Скриншоты консоли
 ![Скриншот](https://github.com/KursovIvan/Lab8/blob/main/Screenshots/Test_0.png)
 ![Скриншот](https://github.com/KursovIvan/Lab8/blob/main/Screenshots/Test_1.png)
